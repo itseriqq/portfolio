@@ -68,7 +68,7 @@ body {
     width: 100%;
     margin-right: 0;
     margin-left: 0;
-    padding-top: 120px;
+    padding-top: 60px;
     background-color: #f9f9f9;
     margin-right: 0;
     padding-bottom: 80px;
@@ -452,8 +452,8 @@ span #txt-highlight {
 @media(max-width: 340px){
     .round-image-container {
         margin-top: 20px;
-        width: 180px; 
-        height: 180px; 
+        width: 170px; 
+        height: 170px; 
         border-radius: 100%;
     }
     .home img-hero-section {
@@ -465,9 +465,15 @@ span #txt-highlight {
 @media(max-width: 500px){
     .round-image-container {
         margin-top: 20px;
-        width: 300px; 
-        height: 300px; 
+        width: 320px; 
+        height: 320px; 
         border-radius: 100%;
+    }
+    .separador {
+        height: 300px;
+    }
+    #conteudo #icones-inicio {
+        margin-top: 25px;
     }
 }
 
@@ -495,7 +501,7 @@ span #txt-highlight {
         border: none;
     }
     #lateral-txt{ 
-        margin-top: 30px;
+        margin-top: 75px;
         padding-left: 80px;
     }
     #row-sobre {
@@ -526,7 +532,7 @@ span #txt-highlight {
     }
 }
 
-@media (max-width: 1240px){
+@media (min-width: 1240px){
     #conteudo #icones-inicio {
         margin-top: 70px;
     }
