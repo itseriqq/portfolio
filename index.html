@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Permissions-Policy" content="interest-cohort=()"> <!-- GitHub pages error solved by this meta tag-->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <title>Erick Augusto | Front-End Developer</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark header" id="nav-header">
+      <a class="navbar-brand" id="erick-name" href="#">Erick.dev</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav ml-auto text-center">
+          <a class="nav-item nav-link" href="#">home</a>
+          <a class="nav-item nav-link" href="#sobre">about</a>
+          <a class="nav-item nav-link" href="#">experience</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              portfolio
+            </a>
+            <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">ux design</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">programming</a>
+            </div>
+          </li>
+        </div>
+      </div>
+    </nav>
+
+  <!-- primeira inicio -->
+  <section class="sec-hero">
+    <div class="container-fluid" id="conteudo">
+      <div class="row w-100"> <!--row 1-->
+        <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12 d-flex flex-column align-items-center separador">
+          <div class="round-image-container">
+            <img class="img-fluid img-hero-section" src="images/image-coding.svg" alt="Floating Picture">
+          </div>
+          <button type="button" class="btn btn-dark d-flex align-items-center justify-content-center" id="curriculum">Download CV<i class="bi bi-cloud-arrow-down" id="download"></i></button>
+        </div>
+        <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12 d-flex flex-column align-items-start" id="lateral-txt">
+          <span>Hey! 👋</span>
+          <span>I'm <span id="txt-highlight">Erick</span>.</span>
+          <span>I'm a <span id="txt-highlight">UX</span> and <span id="txt-highlight">Front-End Developer</span>.</span>
+          <div class="row" id="row-icones-inicio">
+            <div class="col-12" id="icones-inicio">
+              <i class="bi bi-linkedin" id="linkedin-i"></i>
+              <i class="bi bi-github" id="github-i"></i>
+            </div>
+          </div>
+        </div>
+      </div> <!-- fim row 1 -->
+    </div>
+  </section>
+
+<!-- section sobre -->
+<section class="sobre">
+  <div class="container">
+    <div class="row">
+        <div id="sobre-div-content"> <!-- inicio do sobre-->
+          <span id="titulo-sobre">About me.</span>
+        </div>
+        </div>
+            <div class="row d-flex flex-md-row" id="sobre-content"> <!-- C classe d-flex e flex-md-row para exibir as colunas lado a lado em dispositivos médios e maiores -->
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12"> 
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item title-item">Graduation: <span>BSc. in Computer Science</span></li>
+                  <li class="list-group-item title-item">University: <span>Federal University of ABC (UFABC)</span></li>
+                  <li class="list-group-item title-item">Age: <span>20 years</span></li>
+                  <li class="list-group-item title-item">Location: <span>São Paulo, Brazil</span></li>
+                </ul>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" id="txt-lateral-sobre">
+                  <div class="row w-100">
+                    <div class="d-flex align-items-center justify-content-center tech-stack-title">
+                      <h2>Tech Stack</h2>
+                    </div>
+                    <hr>
+                  </div>
+                  <div class="row w-100 sobre-logos">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 d-flex justify-content-center align-items-center skills">
+                      <ul>
+                        <li>
+                          <img src="https://skillicons.dev/icons?i=html,css" alt="skill-icon">
+                        </li>
+                        <li>
+                          <img src="https://skillicons.dev/icons?i=git,figma" alt="skill-icon">
+                        </li>
+                        <li>
+                          <img src="https://skillicons.dev/icons?i=javascript,python" alt="skill-icon">
+                        </li>
+                        <li>
+                          <img src="https://skillicons.dev/icons?i=bootstrap,react" alt="skill-icon">
+                        </li>
+                      </ul>
+                    </div>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+
+<!-- inicio section projetos-->
+
+<section id="projetos">
+  <div class="container">
+    <div class="row">
+      <div class="row-projetos-1 col-12 d-flex align-items-center justify-content-center">
+        <p>NEW PROJECTS COMING SOON!</p> 
+      </div>
+      <div class="row">
+        <div class="row-projetos-2 col-12 d-flex align-items-center justify-content-center">
+          <p>😝</p> 
+        </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- fim section projetos-->
+
+<!-- inicio section experiencia -->
+
+<section class="cv" id="experiencia">
+  <h2 class="pt-3 pb-4"></h2>
+  <div class="container pb-5">
+    <div class="row">
+      <div class="col-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <h3 class="cv-title">Education</h3>
+
+        <div class="cv-item mt-5">
+          <h4>BSc. in Science and Technology</h4>
+          <h5>Federal University of ABC (UFABC)</h5>
+          <p><em>2022 - 2025</em></p>
+          <p>Program typically emphasizes the integration of science and technology to solve complex problems. 
+            Learning about advanced scientific principles, technological innovations and practical 
+            applications in various fields.</p>
+        </div>
+
+        <div class="cv-item">
+          <h4>BSc. in Computer Science</h4>
+          <h5>Federal University of ABC, (UFABC)</h5>
+          <p><em>2022-2026</em></p>
+          <p>Program focuses on the study of software development, data analysis and computational theory. 
+            Learning programming languages, algorithms, and data structures to solve complex problems.
+          </p>
+        </div>
+
+        <div class="cv-item">
+          <h4>Administration Technician</h4>
+          <h5>ETEC Irmã Agostina (ETECia)</h5>
+          <p><em>2018-2020</em></p>
+          <p>Program focused in office management, financial administration, and organizational 
+            efficiency. Focused in data analysis, project coordination, and team leadership, contributing to 
+            operations and business success.</p>
+
+        </div>
+      
+        </div>
+      
+      <div class="col-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <h3 class="cv-title">Courses</h3>
+
+        <div class="cv-item mt-5">
+          <h4>HTML, CSS and JavaScript for Web Developers</h4>
+          <h5>Johns Hopkins University</h5>
+          <p><em>2024</em></p>
+          <p>This course offered by Johns Hopkins University provides a solid knowledge 
+            to front-end web development. Learning how to create responsive and visually appealing websites, 
+            gaining practical skills in coding and design.</p>
+        </div>
+
+        <div class="cv-item">
+          <h4>Foundations of UX Design</h4>
+          <h5>Google</h5>
+          <p><em>2024</em></p>
+          <p>This course offered by Google provides solid foundations 
+            about User Experience (UX) Design role. Showing different ways in which UX can make websites easily to navigate.</p>
+        </div>
+
+        <div class="cv-item">
+          <h4>UX Design: Empathize, Define, and Ideate</h4>
+          <h5>Google</h5>
+          <p><em>2024</em></p>
+          <p>This course offered by Google provides great knowledge 
+            about UX Design creating process. Learning how to understand clients and the way to empathize 
+            with the user.</p>
+        </div>
+      
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-12 d-flex align-items-center justify-content-center"></div>
+        <div class="d-flex justify-content-center align-items-center mt-5">
+          <button type="button" class="btn btn-outline more"><i class="bi bi-linkedin"></i>  LinkedIn</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- fim section experiencia -->
+
+<section class="ft">
+  <footer class="footer">
+    <div class="row">
+      <div class="col-12 d-flex align-items-center justify-content-center icones">
+        <a href="" type="button"><i class="bi bi-facebook"></i></a>
+        <a href="" type="button"><i class="bi bi-github"></i></a>
+        <a href="" type="button"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 d-flex align-items-center justify-content-center nav-footer">
+        <a href="" class="nav-item nav-link">home</a>
+        <a href="" class="nav-item nav-link">about</a>
+        <a href="" class="nav-item nav-link">experience</a>
+        <a href="" class="nav-item nav-link">portfolio</a>
+      </div>
+    <div class="row">
+      <div class="col-12 text-center erick-footer">
+        <a href="" class="navbar-brand">Erick.dev</a>
+      </div>
+    </div> 
+    <div class="row">
+      <div class="col-12 text-center copyright">
+        <p>All rights reserved. ©️</p>
+      </div>
+    </div>
+</section>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

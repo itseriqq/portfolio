@@ -1,0 +1,442 @@
+body {
+    font-family: Poppins, sans-serif;
+    display: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#erick-name {
+    font-size: x-large;
+    font-weight: 600;
+    padding-left: 40px;   
+}
+
+#erick-name:hover {
+    color: #3982FD; 
+    text-decoration: none;  
+    transition: color 0.3s ease;
+}
+
+#nav-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px;
+    padding-right: 60px;
+    font-size: large;
+    background-color: black;
+}
+
+/* #title {
+    display: relative;
+    font-size: 24px;
+    text-align: left;
+    font-weight: 900;
+    color: #fff;
+    margin-right: auto;
+    margin-left: 50px;
+} */
+
+/* #title a {
+    font-size: 24px;
+    font-weight: 900;
+    color: #fff;
+} */
+
+.navbar-toggler-icon {
+    color: white;
+}
+
+.nav-link:hover { 
+    color: #3982FD !important; /*passando por cima das regras do bootstrap*/
+}
+
+.navbar-nav .nav-item.dropdown:hover .nav-link {
+    color: #3982FD;
+  }
+  
+.navbar-nav .nav-item.dropdown.show .nav-link {
+    color: #3982FD;
+}
+  
+.navbar-nav .nav-item.dropdown.show .dropdown-menu a:hover {
+    color: #3982FD;
+    background-color: transparent;
+}
+
+#conteudo {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    padding-top: 120px;
+    background-color: #f9f9f9;
+    margin-right: 0;
+    padding-bottom: 80px;
+}
+
+#conteudo span {
+    color: #2d2e32;
+    font: Poppins;
+    font-weight: 600;
+}
+
+#row-icones-inicio {
+    width: 100%;
+}
+
+#conteudo #linkedin-i:hover {
+    font-size: 50px;
+    cursor: pointer;
+    color: #3982FD;
+    transition: .2 ease;
+}
+
+#conteudo .row #github-i:hover {
+    font-size: 50px;
+    cursor: pointer;
+    color: #3982FD;
+    transition: .2 ease;
+}
+
+#conteudo #icones-inicio {
+    margin-top: 135px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 40px;
+    color:#2d2e32;
+    height: 80px;
+}
+
+.separador {
+    border-right: 1px solid;
+    height: 500px;
+}
+
+.round-image-container {
+    margin-top: 20px;
+    overflow: hidden;
+    width: 500px; 
+    height: 500px; 
+    border-radius: 100%;
+}
+
+.round-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#curriculum {
+    margin-top: -30px;
+}
+
+#lateral-txt {
+    padding-left: 40px;
+    margin-top: 140px;
+    font-size: 40px;
+}
+
+span #txt-highlight {
+    color: #3982FD;
+}
+
+.header a {
+    text-decoration: none;  
+    color: white;
+    font-weight: 300;
+}
+
+#curriculum {
+    border-radius: 30px;
+    height: 40px;
+    width: 170px;
+    background-color: #3982FD;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    outline: none;
+}
+
+#curriculum:hover {
+    border: 1px solid black;
+    transform: scale(1.05);
+    transition: .2s;
+    box-shadow: 30px #3982FD;
+}
+
+#curriculum:active {
+    border: none;
+    box-shadow: none;
+}
+
+#download {
+    font-size: 16px;
+    margin-left: 10px;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+#titulo-sobre{
+    color: #3982FD;
+    font-weight: 600;
+}
+
+/* Sobre */
+
+.sobre {
+    background-color: #fff;
+}
+.sobre ul li span {
+    font-weight: 400;
+}
+
+.sobre .title-item {
+    font-weight: 600;
+}
+
+#sobre-div-content {
+    margin-top: 50px;
+    padding-left: 25px;
+    color: #3982FD;
+    font-size: 30px;
+    font: 'Poppins';
+    font-weight: 600;
+}
+
+#sobre-content {
+    margin-top: 20px;
+    color: #3982FD;
+    font-size: 18px;
+}
+
+#txt-lateral-sobre h2 {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Poppins';
+    color: #2d2e32;
+}
+
+.tech-stack-title {
+    margin-bottom: 11px;
+    margin-left: 15px;
+}
+
+.sobre-logos {
+    margin-top: 30px;
+}
+
+.skills {
+    bottom: 0;
+    color: #767676;
+    display: flex;
+    font-size: 1.8rem;
+}
+
+.skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.skills ul li img {
+    transition: all .3s ease-in-out;
+}
+
+.skills ul li img:hover {
+    -webkit-transform: translateY(-1rem);
+    transform: translateY(-1rem);
+}
+
+
+/* fim do sobre */
+
+
+/* inicio section projetos*/
+
+#projetos {
+    color:#2d2e32;
+    background-color: #f9f9f9;
+    margin-top: 60px;
+}
+
+#projetos .row-projetos-1 {
+    margin-top: 90px;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+#projetos .row-projetos-2 p {
+    margin-bottom: 90px;
+    font-size: 35px;
+}
+
+
+/* fim section projetos*/
+
+/* inicio section experiencia */
+
+.cv .cv-title {
+    font-weight: 600;
+    font-size: 30px;
+    margin: 20px 0px 20px 0px;
+    color: #3982FD;
+}
+
+.cv .cv-item {
+    padding: 0 0 20px 20px;
+    margin-top: -2px;
+    border-left: 2px solid #3982FD;
+    position: relative;
+}
+
+.cv .cv-item h4 {
+    line-height: 22px;
+    font-weight: 600;
+    /* text-transform: uppercase; */
+    margin-bottom: 10px;
+}
+
+.cv .cv-item::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -8.5px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #3982FD;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.cv .more {
+    border: 1px solid #3982FD;
+    color: #3982FD;
+    margin-left: -35px;
+}
+
+
+.cv .more:hover {
+    border: 1px solid #3982FD;
+    background-color:#3982FD;
+    color: #fff;
+}
+
+/* fim section experiencia */
+
+
+/* inicio footer */
+
+.footer {
+    background-color: #000;
+    color: white;
+    font-weight: 600;
+    padding: 40px 0px 0px 0px;
+}
+
+.icones {
+    gap: 15px;
+    font-size: 30px;
+    margin-left: -15.5px;
+}
+
+.icones a i {
+    color: white;
+}
+
+.icones a i:hover {
+    cursor: pointer;
+    color: #3982FD;
+    transition: .2s ease;
+}
+
+.nav-footer {
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.erick-footer {
+    margin-top: 10px;
+    font-weight: 600;
+    padding-top: 15px;
+    font-size: 20px;
+    border-top: 1px solid #2d2e32;
+}
+
+.erick-footer:hover {
+    color: #3982FD;
+    transition: .2s ease;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+/* fim footer */
+
+/* media queries */
+
+@media (max-width: 575px){
+    #erick-name {
+        padding-left: 20px;   
+    }
+    #nav-header {
+        padding: 15px;
+        padding-right: 20px;
+    }
+    body {
+        overflow-x: hidden;
+    }
+}
+
+@media (max-width: 475px) {
+    .sec-hero img-hero-section {
+        width: 80px;
+    }
+}
+
+@media (max-width: 992px) {
+    .separador {
+        border: none;
+    }
+    #lateral-txt{ 
+        margin-top: 30px;
+        padding-left: 80px;
+    }
+    #row-sobre {
+        margin-top: 120px;
+    }
+    #conteudo #icones-inicio {
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar-nav {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .navbar-nav .dropdown-menu {
+      margin-left: 25px; 
+    }
+
+    .navbar-nav .dropdown-toggle {
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 1240px){
+    #conteudo #icones-inicio {
+        margin-top: 70px;
+    }
+
+    #lateral-txt {
+        font-size: 32px;
+    }
+
+}
