@@ -416,6 +416,10 @@ span #txt-highlight {
     line-height: 21px;
 }
 
+.txt-lateral-paragraph {
+    margin-bottom: 0;
+}
+
 /* item 2 da pagina projetos */
 .title2 .txt-highlight {
     color: #009970;
