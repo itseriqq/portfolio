@@ -144,9 +144,10 @@ span #txt-highlight {
 
 .header a {
     text-decoration: none;  
-    color: white;
+    color: #000;
     font-weight: 300;
 }
+
 
 #curriculum {
     border-radius: 30px;
