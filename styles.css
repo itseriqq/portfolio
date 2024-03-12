@@ -395,7 +395,7 @@ span #txt-highlight {
 }
 
 @media (max-width: 475px) {
-    .sec-hero img-hero-section {
+    .home img-hero-section {
         width: 80px;
     }
 }
