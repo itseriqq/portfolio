@@ -380,6 +380,73 @@ span #txt-highlight {
 
 /* fim footer */
 
+/* inicio pagina projetos */
+
+.separador-horizontal {
+    height: 0px;
+    border: .3px solid #009970;
+    width: 90%;
+    margin-left: auto;
+    margin-top: 90px;
+    margin-bottom: 50px;
+    margin-right: auto;
+}
+
+.title .txt-highlight {
+    color: #009970;
+}
+
+.title .txt-highlight-item {
+    color: #009970;
+    font-size: 2.6vh 2.6vw;
+}
+
+.title .coluna-img img {
+    border: 1px solid #009970;
+    padding: 3px 0 3px 0;
+    border-radius: 6px;
+}
+
+.title .txt-lateral-div {
+    line-height: 21px;
+    margin-top: -40px;
+}
+
+.title .txt-lateral {
+    line-height: 21px;
+}
+
+/* item 2 da pagina projetos */
+.title2 .txt-highlight {
+    color: #009970;
+}
+
+.title2 .txt-highlight-item {
+    color: #009970;
+    font-size: 2.6vh 2.6vw;
+}
+
+.title2 .coluna-img img {
+    border: 1px solid #009970;
+    padding: 3px 0 3px 0;
+    border-radius: 6px;
+}
+
+.title2 .txt-lateral-div {
+    line-height: 21px;
+    margin-top: -40px;
+}
+
+.title2 .txt-lateral {
+    line-height: 21px;
+}
+
+/* fim item 2 da pagina projetos */
+
+/* fim pagina projetos */
+
+
+
 /* media queries */
 
 @media(max-width: 340px){
@@ -436,6 +503,11 @@ span #txt-highlight {
     }
     #conteudo #icones-inicio {
         margin-top: 80px;
+    }
+
+    .title .txt-lateral-div {
+        line-height: 21px;
+        margin-top: 10px;
     }
 }
 
