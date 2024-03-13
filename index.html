@@ -10,11 +10,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://unpkg.com/feather-icons"></script>
 
   <title>Erick Augusto | Front-End Developer</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark header" id="nav-header">
+    <nav class="navbar navbar-expand-sm navbar-dark header sticky-top" id="nav-header">
       <a class="navbar-brand" id="erick-name" href="#">Erick.dev</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -23,8 +24,8 @@
         <div class="navbar-nav ml-auto text-center">
           <a class="nav-item nav-link" href="#home">home</a>
           <a class="nav-item nav-link" href="#about">about</a>
-          <a class="nav-item nav-link" href="#experience">experience</a>
           <a class="nav-item nav-link" href="#projetos">portfolio</a>
+          <a class="nav-item nav-link" href="#experience">experience</a>
     
         </div>
       </div>
@@ -80,7 +81,7 @@
                     <hr>
                   </div>
                   <div class="row w-100 sobre-logos">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 d-flex justify-content-center align-items-center skills">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 d-flex justify-content-center align-items-center text-center skills">
                       <ul>
                         <li>
                           <img src="https://skillicons.dev/icons?i=html,css" alt="skill-icon">
@@ -107,66 +108,83 @@
 <!-- inicio section projetos-->
 
 <section class="projetos" id="projetos">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
-      <div class="projects-div-content text-center">
-        <span class="titulo-projects">Projects.</span>
+      <div class="row">
+        <div class="col-12">
+          <div class="projects-div-content text-center">
+            <span class="titulo-projects">Projects.</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-center">
+          <h5 class="titulo-projects-description">Each project is a unique piece of development 🧩</h5>
+        </div>
       </div>
 
       <!-- item 1 -->
-    <div class="row d-flex justify-content-center align-items-center">
-      <div class="col-4 item mt-5">
-        <div class="row">
-          <div class="col-12 text-center">
-            <h4 class="title-item txt-highlight">SaborBrasil</h4>
+    <div class="row row-items d-flex justify-content-center align-items-center">
+      <div class="col-md-4 col-sm-12 col-lg-4 col-12 mt-5 col-item">
+        <div class="item">
+          <div class="row">
+            <div class="col-12 text-center">
+              <h4 class="title-item txt-highlight">SaborBrasil</h4>
+            </div>
           </div>
-        </div>
-        <!-- <div class="col-12 imagem-item">
-          <img src="images/portfolio-restaurante.png" class="img-fluid" alt="Projeto Restaurante">
-        </div> -->
-        <div class="col-12 descricao-item text-center mt-3">
-          <h5>Made in 2024, March</h5>
-        </div>
-        <div class="col-12 d-flex justify-content-center align-items-center">
-          <a type="button" class="btn-item-projeto text-center">Ver projeto</a>
-          <a type="button" class="btn-item text-center">Ver código</a>
-      </div>
-      </div>
-      <!-- fim item 1 -->
-
-      <div class="col-4 item mt-5">
-        <div class="row">
-          <div class="col-12 text-center">
-            <h4 class="title-item txt-highlight">X</h4>
+          <div class="row">
+            <div class="col-12 descricao-item text-center mt-3">
+              <p>SaborBrasil is a website that embodies the 
+                elegance and sophistication of the restaurant’s services. With clarity and 
+                minimalism at its core, the site seamlessly integrates a table reservation system. 
+                Providing an online experience as refined as the cuisine served.</p>
+            </div>
           </div>
+          <div class="row">
+            <div class="col-12 d-flex justify-content-center align-items-center btn-cima">
+              <a type="button" class="btn-item-projeto text-center"><img src="images/monitor.svg" alt="">Demo</a>
+              <a type="button" class="btn-item-projeto text-center"><img src="images/layout.svg" alt="">Project</a>
+          </div>
+          </div>
+        <div class="row">
+          <div class="col-12 d-flex justify-content-center align-items-center">
+            <a type="button" class="btn-item text-center"><img src="images/github.svg" alt="">Code</a>
         </div>
-        <!-- <div class="col-12 imagem-item">
-          <img src="images/portfolio-restaurante.png" class="img-fluid" alt="Projeto Restaurante">
-        </div> -->
-        <div class="col-12 descricao-item text-center mt-3">
-          <h5>Coming soon.</h5>
         </div>
-        <div class="col-12 d-flex justify-content-center align-items-center">
-          <a type="button" class="btn-item-projeto text-center">Ver projeto</a>
-          <a type="button" class="btn-item text-center">Ver código</a>
+  
+        </div>
+        
       </div>
+      
+
+      <div class="col-md-8 col-sm-12 col-lg-7 mt-5">
+        <div class="row">
+        <div class="img-item-div col-12">
+          <img src="images/portfolio-restaurante.png" class="img-fluid img-item" alt="Landing-page SaborBrasil">
+        </div>
       </div>
-<!-- fim item 2 -->
+    </div>
 
     </div>
-    
-    </div>
-    <div class="row">
-      <div class="row-projetos-1 col-12 d-flex align-items-center justify-content-center">
-        <p class="text-center">NEW PROJECTS COMING SOON!</p> 
-      </div>
-      <div class="row">
-        <div class="row-projetos-2 col-12 d-flex align-items-center justify-content-center">
-          <p>😝</p> 
-        </div>
-    </div>
+
+    <!-- fim item 1 -->
   </div>
 </div>
+  
+<div class="container-fluid">
+  <div class="row">
+    <div class="row-projetos-1 col-12 d-flex align-items-center justify-content-center">
+      <p class="text-center">NEW PROJECTS COMING SOON!</p> 
+    </div>
+    <div class="row">
+      <div class="row-projetos-2 col-12 d-flex align-items-center justify-content-center">
+        <p>😝</p> 
+      </div>
+    
+  </div>
+</div>
+</div>
+
 </section>
 
 <!-- fim section projetos-->
@@ -270,8 +288,8 @@
         <div class="col-12 d-flex align-items-center justify-content-center nav-footer">
           <a href="#home" class="nav-item nav-link">home</a>
           <a href="#about" class="nav-item nav-link">about</a>
-          <a href="#experience" class="nav-item nav-link">experience</a>
           <a href="#projetos" class="nav-item nav-link">portfolio</a>
+          <a href="#experience" class="nav-item nav-link">experience</a>
         </div>
       <div class="row">
         <div class="col-12 text-center erick-footer">
