@@ -258,21 +258,105 @@ span #txt-highlight {
 
 /* inicio section projetos*/
 
-#projetos {
+.projetos {
     color:#2d2e32;
     background-color: #f9f9f9;
     margin-top: 60px;
 }
 
-#projetos .row-projetos-1 {
+.projetos .row-projetos-1 {
     margin-top: 90px;
     font-weight: 600;
     font-size: 30px;
 }
 
-#projetos .row-projetos-2 p {
+.projetos .projects-div-content {
+    margin-top: 50px;
+    padding-left: 25px;
+    color: #3982FD;
+    font-size: 30px;
+    font: 'Poppins';
+    font-weight: 600;
+}
+
+.projetos .row-projetos-2 p {
     margin-bottom: 90px;
     font-size: 35px;
+}
+
+.projetos .imagem-projetos {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.projetos .titulo-projects {
+    color: #2d2e32;
+}
+
+.projetos .item {
+    border: 1px solid #2d2e32;
+    padding: 20px;
+    margin-right: 10px;
+    border-radius: 30px;
+    width: 350px;
+    height: 250px;
+}
+
+.projetos .title-item {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #2d2e32;
+}
+
+.projetos .txt-highlight {
+    color: #2d2e32;
+    font-weight: 600;
+}
+
+.projetos .btn-item {
+    text-decoration: none;
+    color: #3982FD;
+    background-color: #fff;
+    border: 1px solid #2d2e32;
+    width: 120px;
+    margin-top: 30px;
+    padding: 10px 12px 10px 12px;
+    border-radius: 30px;
+}
+
+.projetos .btn-item:hover {
+    text-decoration: none;
+    color: #fff !important; 
+    background-color: #3982FD;
+    border: none;
+    width: 120px;
+    margin-top: 30px;
+    padding: 10px 12px 10px 12px;
+    border-radius: 20px;
+}
+
+.projetos .btn-item-projeto {
+    text-decoration: none;
+    color: #3982FD;
+    background-color: #fff;
+    border: 1px solid #2d2e32;
+    width: 120px;
+    margin-top: 30px;
+    margin-right: 10px;;
+    padding: 10px 12px 10px 12px;
+    border-radius: 30px;
+}
+
+.projetos .btn-item-projeto:hover {
+    text-decoration: none;
+    color: #fff !important; 
+    background-color: #3982FD;
+    border: none;
+    width: 120px;
+    margin-top: 30px;
+    padding: 10px 12px 10px 12px;
+    border-radius: 20px;
 }
 
 
