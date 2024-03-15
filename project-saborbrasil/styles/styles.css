@@ -1,0 +1,418 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 400;
+}
+
+/* Inicio navigation-bar */
+
+.header {
+    background-color: #fff;
+    color: #000;
+}
+
+#navbarNavDropdown {
+    background-color: #fff;
+    color: #000;
+}
+
+.header .navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.header .navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.header .reserva-button {
+    text-decoration: none;
+    color: #000;
+    border: 1px solid #000;
+    position: absolute;
+    left: 90%;
+    padding: 6px 18px;
+    border-radius: 30px;
+    transition: .2s background-color;
+}
+
+.header .reserva-button:hover {
+    text-decoration: none;
+    background-color: #009970;
+    border: none;
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 30px;
+}
+
+.header .navbar-brand {
+    font-weight: 600;
+    padding-left: 30px;
+}
+
+.header .navbar-brand:hover {
+    color: #009970;
+    transition: .2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #000;
+}
+
+.nav-link {
+    color: #666777;
+    position: relative;
+    font-weight: 500;
+}
+
+/* Fim da nav bar */
+
+
+/* Inicio hero-section */
+
+.hero-section {
+    margin-top: 150px;
+}
+
+.hero-section h1 {
+    font-weight: 600;
+    color: #252525;
+}
+
+.hero-section .separador {
+    width: 200px;
+    color: #009970;
+}
+
+.hero-section h2 {
+    font-weight: 600;
+    color: #252525;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.hero-section h1 span {
+    color: #009970;
+}
+
+.hero-section p {
+    font-weight: 500;
+    margin-bottom: -3px;
+}
+
+.hero-section .row-central .titles {
+    border-right: 1px solid #009970;
+}
+
+.hero-section .txt-decorative {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 6px;
+    margin-top: 25px;
+}
+
+.hero-section .img-principal {
+    margin-top: -80px;
+    margin-left: 50px;
+    width: 450px;
+}
+
+.hero-section .btn-reserva {
+    text-decoration: none;
+    color: white;
+    background-color: #009970;
+    border: none;
+    width: 120px;
+    margin-top: 60px;
+    padding: 10px 12px 10px 12px;
+    border-radius: 20px;
+}
+
+.hero-section .btn-reserva:hover {
+    text-decoration: none;
+    color: #009970;
+    background-color: #fff;
+    border: 1px solid #009970;
+    transition: .2s ease-in-out;
+    width: 120px;
+    margin-top: 60px;
+    padding: 10px 12px 10px 12px;
+    border-radius: 20px;
+}
+
+
+/* Fim hero-section */
+
+/* inicio cardapio */
+
+.citacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    padding: 0;
+    height: 160px;
+    background-color: #00997027;
+}
+
+.citacao .blockquote .highlight {
+    color: #009970;
+}
+
+/* fim cardapio */
+
+.cardapio .title-cardapio h3 {
+    color: #009970;
+    font-weight: 600;
+    padding-bottom: 6px;
+}
+
+.cardapio .img-cardapio{
+    width: 200px;
+    margin-right: auto;
+    margin-left: auto;
+    z-index: 1;
+    margin-bottom: 15px;
+}
+
+.cardapio .img-cardapio:hover{
+    width: 200px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 15px;
+    transition: all .3s ease-in-out;
+    -webkit-transform: translateY(-0.6rem);
+    transform: translateY(-0.6rem);
+}
+
+.cardapio .item {
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding-top: 30px;
+}
+
+.cardapio .img-cardapio img{
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    border: none;;
+    border-radius: 100%;
+}
+
+
+.cardapio .separador {
+    width: 80px;
+    margin-top: -10px;
+    border-bottom: 1px solid #000;
+}
+
+.cardapio .cardapio-item {
+    border-radius: 20px;
+    padding: 10px 10px 10px 10px;
+    transition: .3s ease-in-out;
+    background-color: #ffffff;
+    /* box-shadow: 0 10px 10px -5px; */
+}
+
+.cardapio .cardapio-item:hover {
+    transition: all .3s ease-in-out;
+    -webkit-transform: translateY(-0.6rem);
+    transform: translateY(-0.6rem);
+    cursor: pointer;
+    background-color: #f1f1f19c;
+    box-shadow: 0 10px 10px -5px;
+}
+.cardapio .descricao-item {
+    font-weight: 500;
+}
+
+.cardapio .div-descricao {
+    border-radius: 20px;
+}
+
+.cardapio .preco-item {
+    font-weight: 300;
+    margin-right: auto;
+    margin-left: auto;
+    border-bottom: 0.5px solid #009970;
+    padding-bottom: 5px;
+    width: 100px;
+}
+
+.depoimentos {
+    width: 100%;
+    padding: 50px 20px;
+    max-width: 900px;
+    position: relative;
+    overflow: hidden;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.depoimentos i{
+    font-size: 90px;
+    color: #cccccc62;
+}
+
+.depoimentos .slide {
+    padding: 40px 60px;
+    cursor: grab;
+}
+
+.depoimentos .slide:active {
+    padding: 40px 60px;
+    cursor: grabbing;
+}
+
+.depoimentos p.depoi-txt {
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.slide .person {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.depoimentos .slide .person p.nome-person {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.depoimentos .slide .person p.func-person {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: -15px;
+}
+
+.depoimentos .slide .person img {
+    width: 80px;
+    height: 80px;
+    margin-right: -15px;
+}
+
+.depoimentos .color-buttons {
+    color: #009970;
+}
+
+.depoimentos .swiper-pagination-bullet-active {
+    background-color: #009970; /* Cor dos botões ativos */
+}
+
+
+
+@media (max-width: 576px){
+    .hero-section .img-principal {
+        margin-top: 0;
+        margin-left: 50px;
+        width: 200px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .hero-section {
+        margin-top: 50px;
+    }
+    .hero-section .row-central .titles {
+        border-right: none;
+        /* border-bottom: 1px dotted #009970; */
+        padding-bottom: 20px;
+    }
+    .hero-section .row-central .titles, .div-imagem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .hero-section .div-imagem {
+        margin-top: 20px;
+        margin-left: -15px;
+    }
+    
+    .hero-section .img-principal {
+        margin-top: 80px;
+        margin-left: 50px;
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .hero-section .txt-decorative {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 0px;
+    }
+    .hero-section .btn-reserva {
+        text-decoration: none;
+        color: white;
+        background-color: #009970;
+        border: none;
+        width: 120px;
+        margin-top: 20px;
+        padding: 10px 12px 10px 12px;
+        border-radius: 20px;
+    }
+    
+    .hero-section .btn-reserva:hover {
+        text-decoration: none;
+        color: #009970;
+        background-color: #fff;
+        border: 1px solid #009970;
+        transition: .2s ease-in-out;
+        width: 120px;
+        margin-top: 20px;
+        padding: 10px 12px 10px 12px;
+        border-radius: 20px;
+    }
+    
+}
+
+
+@media (max-width: 991px) {
+    .reserva-button {
+        display: none;
+    }
+    .header .navbar-brand {
+        font-weight: 600;
+        padding-left: 0px;
+    }
+    .hero-section .img-principal {
+        margin-top: 0px;
+        margin-left: 50px;
+        width: 350px;
+    }
+}
+@media (min-width: 991px) {
+    .reserva-button2 {
+        display: none;
+    }
+    .nav-link:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: #009970;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+    
+    .nav-link:hover::before {
+        width: 100%;
+        visibility: visible;
+    }
+}
