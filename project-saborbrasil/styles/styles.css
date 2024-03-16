@@ -207,12 +207,13 @@ body {
 
 .cardapio .separador {
     width: 80px;
-    margin-top: -10px;
+    margin-top: -20px;
     border-bottom: 1px solid #000;
 }
 
 .cardapio .separador-itens {
-    width: 176px;
+    width: 160px;
+    margin-left: 5px;
     margin-top: -10px;
     border-bottom: 1px solid #000;
 }
@@ -318,10 +319,10 @@ body {
 
 
 /* inicio pagina de cardapio */
-
+/* 
 .itens {
     padding-top: 30px;
-}
+} */
 
 .reservar .btn-reserva {
     text-decoration: none;
@@ -353,20 +354,285 @@ body {
 /* inicio pagina sobre */
 
 
-.sobre .txt-highlight {
+.sobre .sobre-title {
     color: #009970;
-
+    font-weight: 600;
 }
 
+.sobre-title-item {
+    font-weight: 600;
+    color: #009970;
+}
+
+
 .sobre .separador {
+    width: 70px;
+    margin-top: -10px;
+    border-bottom: 1px solid #000;
+}
+
+.sobre .txt-highlight {
+    color: #009970;
+    font-weight: 500;
+}
+
+.sobre-page .btn-reserva {
+    text-decoration: none;
+    color: white;
+    background-color: #009970;
+    border: none;
+    width: 120px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding: 10px 12px 10px 12px;
+    border-radius: 20px;
+}
+
+.sobre-page .btn-reserva:hover {
+    text-decoration: none;
+    color: #009970;
+    background-color: #fff;
     border: 1px solid #009970;
+    transition: .2s ease-in-out;
+    width: 120px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    padding: 10px 12px 10px 12px;
+    border-radius: 20px;
+}
+
+.chefs-container .txt-highlight {
+    color: #009970;
+}
+
+
+.chefs-container .separador {
     width: 100px;
+    margin-left: 2px;
+    margin-top: -5px;
+    border-bottom: 1px solid #000;
+}
+
+.itens-chefs {
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    overflow: hidden;
+    margin-right: auto;
+    margin-left: auto;
+    height: 290px;
+}
+
+.slides-chefs img {
+    width: 190px;
+    height: 190px;
+}
+
+.slides-chefs .chef-info { 
+    background-color: #0099702c;
+    border-radius: 20px 0px;
+    width: 190px;
+    height: 60px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.slides-chefs .chef-info h5 { 
+    font-weight: 600;
+    padding-top: 10px;
+    font-size: 18px;
+}
+
+.slides-chefs .chef-info p { 
+    font-weight: 400;
+    margin-top: -10px;
+    font-size: 15px;
+}
+
+.chefs-container .slides {
+    cursor: grab;
+}
+
+.chefs-container .slides:active {
+    cursor: grabbing;
+}
+
+.carrossel-sobre .swiper-button-prev,
+.carrossel-sobre .swiper-button-next {
+  /* position: absolute; */
+  top: 50%;
+  /* transform: translateY(-50%); */
+  z-index: 10; /* Garante que os botões estejam acima dos slides */
+  width: 40px; /* Ajuste conforme necessário */
+  height: 30px; /* Ajuste conforme necessário */
+  color: #009970;
+  background-color: rgba(255, 255, 255, 0.5); /* Cor de fundo dos botões */
+  border-radius: 50%; /* Botões redondos */
+  cursor: pointer; /* Cursor de apontar */
+}
+
+.carrossel-sobre .swiper-pagination {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10; /* Garante que a paginação esteja acima dos slides */
+}
+
+.carrossel-sobre .swiper-pagination-bullet-active {
+    background-color: #009970; /* Cor dos botões ativos */
 }
 
 
 /* fim pagina sobre */
 
+/* pagina reservar */
 
+.reserva-page .txt-highlight {
+    color: #009970;
+}
+
+.reserva-page .separador {
+    width: 80px;
+    margin-top: -10px;
+    border-bottom: 1px solid #000;
+}
+
+.reserva-page .menu {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.reserva-page .btn-reserva {
+    text-decoration: none;
+    color: white;
+    background-color: #009970;
+    border: none;
+    width: 120px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    padding: 10px 12px 10px 12px;
+    border-radius: 20px;
+}
+
+.reserva-page .btn-reserva:hover {
+    text-decoration: none;
+    color: #009970;
+    background-color: #fff;
+    border: 1px solid #009970;
+    transition: .2s ease-in-out;
+    width: 120px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    padding: 10px 12px 10px 12px;
+    border-radius: 20px;
+}
+
+
+
+/* fim pagina reservar */
+
+
+/* inicio pagina contato */
+
+.contato .txt-highlight {
+    color: #009970;
+}
+
+.contato .contato-title {
+    color: #009970;
+    font-weight: 600;
+}
+
+.contato .separador {
+    width: 70px;
+    margin-top: -10px;
+    border-bottom: 1px solid #000;
+}
+
+.contato .separador-lateral {
+    border-right: 1px solid #000;
+}
+
+.contato .itens {
+    border-radius: 20px;
+    padding: 20px
+}
+
+.contato .btn-seguir {
+    text-decoration: none;
+    color: white;
+    background-color: #009970;
+    border: none;
+    width: 120px;
+    margin: 0;
+    padding: 10px 12px 10px 12px;
+    border-radius: 20px;
+}
+
+.contato .btn-seguir:hover {
+    text-decoration: none;
+    color: #009970;
+    background-color: #fff;
+    border: 1px solid #009970;
+    transition: .2s ease-in-out;
+    width: 120px;
+    margin: 0;
+    padding: 10px 12px 10px 12px;
+    border-radius: 20px;
+}
+
+/* fim pagina contato */
+
+
+/* inicio pagina localizacao */
+
+.local .local-title {
+    color: #009970;
+    font-weight: 600;
+}
+
+.local .separador {
+    width: 110px;
+    margin-top: -5px;
+    border-bottom: 1px solid #000;
+}
+
+.local .title-mapa {
+    font-weight: 600;
+    color: #009970;
+}
+
+.local .separador-itens {
+    width: 100px;
+    margin-left: 5px;
+    margin-top: -12px;
+    border-bottom: 1px solid #000;
+}
+
+.local .map {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.local .txt-highlight {
+    color: #009970;
+    font-weight: 500;
+}
+
+.local p.txt {
+    font-weight: 400;
+}
+
+.local .separador-lugar {
+    width: 190px;
+    margin-left: 5px;
+    margin-top: -15px;
+    border-bottom: 1px solid #000;
+}
+
+
+/* fim pagina localizacao */
 
 @media (max-width: 576px){
     .hero-section .img-principal {
@@ -386,6 +652,43 @@ body {
     .separador-itens {
         margin-left: 20px; 
         width: 160px;
+    }
+
+    .chefs-container .separador {
+        margin-left: 8px;
+        width: 85px;
+        margin-top: -5px;
+        border-bottom: 1px solid #000;
+    }
+
+    .sobre .separador {
+        margin-left: 0 !important;
+        width: 80px;
+        margin-top: -10px;
+        border-bottom: 1px solid #000;
+    }
+
+    .local .separador {
+        width: 110px;
+        margin-left: 0;
+        margin-top: -5px;
+        border-bottom: 1px solid #000;
+    }
+
+    .local .separador-itens {
+        width: 86px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: -12px;
+        border-bottom: 1px solid #000;
+    }
+
+    .local .title-mapa {
+       text-align: center;
+    }
+
+    .local p .txt{
+        text-align: center;
     }
 }
 
@@ -449,7 +752,18 @@ body {
         padding: 10px 12px 10px 12px;
         border-radius: 20px;
     }
-    
+
+    .contato .separador {
+        border: none;
+        margin: 0 !important;
+    }
+
+    .cardapio .separador-itens {
+        width: 140px;
+        margin-left: 10px;
+        margin-top: -10px;
+        border-bottom: 1px solid #000;
+    }
 }
 
 
@@ -466,6 +780,35 @@ body {
         margin-left: 50px;
         width: 350px;
     }
+    .local .mapa {
+        margin-top: 20px;
+    }
+
+    .local .separador-lugar {
+        width: 190px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -15px;
+        border-bottom: 1px solid #000;
+    }
+    .local .title-mapa {
+        margin-top: 30px;
+    }
+
+    .local .map {
+        display: flex ;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .local .separador-itens {
+        width: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -15px;
+        border-bottom: 1px solid #000;
+    }
+
 }
 @media (min-width: 991px) {
     .reserva-button2 {
@@ -487,5 +830,10 @@ body {
     .nav-link:hover::before {
         width: 100%;
         visibility: visible;
+    }
+
+    .local .map {
+        border-right: 1px solid #000;
+        padding-right: 60px;
     }
 }
