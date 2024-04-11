@@ -375,7 +375,7 @@ span #txt-highlight {
     text-decoration: none;
     color: #fff !important; 
     background-color: #3982FD;
-    border: 0.2px solid #000;
+    border: 1px solid #000;
     width: 170px;
     margin-top: 10px;
     padding: 10px 12px 10px 12px;
@@ -719,6 +719,12 @@ span #txt-highlight {
     .projetos .btn-item img {
         display: none;
     }
+
+    .projetos .btn-item {
+        border-radius: 30px;
+        border: 1px solid #000;
+    }
+
     .projetos .btn-item-projeto img {
         display: none;
     }
