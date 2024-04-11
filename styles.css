@@ -13,12 +13,12 @@ body {
 #erick-name {
     font-size: x-large;
     font-weight: 600;
-    padding-left: 40px;   
+    padding-left: 40px;
 }
 
 #erick-name:hover {
-    color: #3982FD; 
-    text-decoration: none;  
+    color: #3982FD;
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
@@ -52,22 +52,24 @@ body {
     color: white;
 }
 
-.nav-link:hover { 
-    color: #3982FD !important; /*passando por cima das regras do bootstrap*/
+.nav-link:hover {
+    color: #3982FD !important;
+    /*passando por cima das regras do bootstrap*/
 }
 
 .navbar-nav .nav-item.dropdown:hover .nav-link {
     color: #3982FD;
-  }
-  
+}
+
 .navbar-nav .nav-item.dropdown.show .nav-link {
     color: #3982FD;
 }
-  
+
 .navbar-nav .nav-item.dropdown.show .dropdown-menu a:hover {
     color: #3982FD;
     background-color: transparent;
 }
+
 
 #conteudo {
     width: 100%;
@@ -96,7 +98,8 @@ body {
     width: 100%;
 }
 
-#conteudo #linkedin-i:hover, #conteudo #github-i:hover {
+#conteudo #linkedin-i:hover,
+#conteudo #github-i:hover {
     transition: all .3s ease-in-out;
     -webkit-transform: translateY(-0.6rem);
     transform: translateY(-0.6rem);
@@ -116,7 +119,7 @@ body {
     align-items: center;
     gap: 20px;
     font-size: 40px;
-    color:#2d2e32;
+    color: #2d2e32;
     height: 80px;
 }
 
@@ -126,9 +129,9 @@ body {
 }
 
 .round-image-container {
-    margin-top: 20px;
-    width: 500px; 
-    height: 500px; 
+    margin-top: 20px;   
+    width: 500px;
+    height: 500px;
     border-radius: 100%;
 }
 
@@ -153,7 +156,7 @@ span #txt-highlight {
 }
 
 .header a {
-    text-decoration: none;  
+    text-decoration: none;
     color: #000;
     font-weight: 300;
 }
@@ -191,7 +194,7 @@ span #txt-highlight {
     margin-top: 2px;
 }
 
-#titulo-sobre{
+#titulo-sobre {
     color: #3982FD;
     font-weight: 600;
 }
@@ -201,6 +204,7 @@ span #txt-highlight {
 .sobre {
     background-color: #fff;
 }
+
 .sobre ul li span {
     font-weight: 400;
 }
@@ -272,7 +276,7 @@ span #txt-highlight {
 /* inicio section projetos*/
 
 .projetos {
-    color:#2d2e32;
+    color: #2d2e32;
     background-color: #f9f9f9;
     margin-top: 60px;
 }
@@ -373,7 +377,7 @@ span #txt-highlight {
 
 .projetos .btn-item:hover {
     text-decoration: none;
-    color: #fff !important; 
+    color: #fff !important;
     background-color: #3982FD;
     border: 1px solid #000;
     width: 170px;
@@ -400,7 +404,7 @@ span #txt-highlight {
 
 .projetos .btn-item-projeto:hover {
     text-decoration: none;
-    color: #fff !important; 
+    color: #fff !important;
     background-color: #3982FD;
     border: 0.2px solid #2d2e32;
     width: 170px;
@@ -436,7 +440,7 @@ span #txt-highlight {
     margin-bottom: 10px;
 }
 
-.cv .cv-item::before{
+.cv .cv-item::before {
     content: "";
     position: absolute;
     top: 0;
@@ -457,7 +461,7 @@ span #txt-highlight {
 
 .cv .more:hover {
     border: 1px solid #3982FD;
-    background-color:#3982FD;
+    background-color: #3982FD;
     color: #fff;
 }
 
@@ -590,19 +594,20 @@ span #txt-highlight {
 
 
 
-@media(max-width: 340px){
+@media(max-width: 340px) {
     .round-image-container {
         margin-top: 20px;
-        width: 170px; 
-        height: 170px; 
+        width: 170px;
+        height: 170px;
         border-radius: 100%;
     }
+
     .home img-hero-section {
         width: 40px;
     }
 }
 
-@media(max-width: 375px){
+@media(max-width: 375px) {
     .cv .cv-item h4 {
         line-height: 23px;
         font-weight: 600;
@@ -618,14 +623,15 @@ span #txt-highlight {
     }
 }
 
-@media(max-width: 500px){
+@media(max-width: 500px) {
     .round-image-container {
         margin-top: -30px;
-        width: 320px; 
-        height: 320px; 
+        width: 320px;
+        height: 320px;
         border-radius: 100%;
         margin-right: 20px;
     }
+
     /* .home #curriculum {
         margin-right: 20px;
     } */
@@ -648,20 +654,22 @@ span #txt-highlight {
     }
 }
 
-@media (max-width: 575px){
+@media (max-width: 575px) {
     #erick-name {
-        padding-left: 20px;   
+        padding-left: 20px;
     }
+
     #nav-header {
         padding: 15px;
         padding-right: 20px;
     }
+
     body {
         overflow-x: hidden;
     }
 }
 
-@media (min-width: 992px){
+@media (min-width: 992px) {
     .home .img-shaking {
         width: 50px;
         position: absolute;
@@ -674,13 +682,16 @@ span #txt-highlight {
     .separador {
         border: none;
     }
-    #lateral-txt{ 
+
+    #lateral-txt {
         margin-top: 75px;
         padding-left: 80px;
     }
+
     #row-sobre {
         margin-top: 120px;
     }
+
     #conteudo #icones-inicio {
         margin-top: 10px;
     }
@@ -700,12 +711,12 @@ span #txt-highlight {
 
 @media (max-width: 767px) {
     .navbar-nav {
-      width: 100%;
-      justify-content: center;
+        width: 100%;
+        justify-content: center;
     }
 
     .navbar-nav .dropdown-menu {
-      margin-left: 25px; 
+        margin-left: 25px;
     }
 
     .navbar-nav .dropdown-toggle {
@@ -730,13 +741,13 @@ span #txt-highlight {
     }
 }
 
-@media (max-width: 883px){
+@media (max-width: 883px) {
     .projetos .row-projetos-1 {
         margin-top: 200px;
     }
 }
 
-@media (min-width: 1275px){
+@media (min-width: 1275px) {
     #conteudo #icones-inicio {
         margin-top: 147px;
     }
