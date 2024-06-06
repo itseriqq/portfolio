@@ -586,8 +586,37 @@ span #txt-highlight {
 
 /* fim item 2 da pagina projetos */
 
+
+/* inicio pagina projetos to-do.app */
+
+.txt-highlight-todo {
+    font-weight: 600;
+    color: #c89666;
+}
+
+.separador-horizontal-todo {
+    height: 0px;
+    border: .3px solid #c89666;
+    width: 90%;
+    margin-left: auto;
+    margin-top: 90px;
+    margin-bottom: 50px;
+    margin-right: auto;
+}
+
 /* fim pagina projetos */
 
+.title .coluna-img-todo img {
+    border: 1px solid black;
+    /* padding: 3px 0 3px 0; */
+    border-radius: 6px;
+}
+
+.title2 .coluna-img-todo img {
+    border: 1px solid black;
+    /* padding: 3px 0 3px 0; */
+    border-radius: 6px;
+}
 
 
 /* media queries */
