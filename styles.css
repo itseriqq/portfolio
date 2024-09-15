@@ -604,6 +604,38 @@ span #txt-highlight {
     margin-right: auto;
 }
 
+/* inicio pagina projetos amfernandes */
+
+.txt-highlight-amfernandes {
+    font-weight: 600;
+    color: #00355e;
+}
+
+.separador-horizontal-amfernandes {
+    height: 0px;
+    border: .3px solid #00355e;
+    width: 90%;
+    margin-left: auto;
+    margin-top: 90px;
+    margin-bottom: 50px;
+    margin-right: auto;
+}
+
+.title .coluna-img-amfernandes img {
+    /* border: 1px solid black; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* padding: 3px 0 3px 0; */
+    border-radius: 12px;
+}
+
+.title2 .coluna-img-amfernandes img {
+    /* border: 1px solid black; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* padding: 3px 0 3px 0; */
+    border-radius: 12px;
+}
+
+
 /* fim pagina projetos */
 
 .title .coluna-img-todo img {
@@ -620,7 +652,6 @@ span #txt-highlight {
 
 
 /* media queries */
-
 
 
 @media(max-width: 340px) {
