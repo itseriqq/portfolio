@@ -200,8 +200,17 @@ function createFilm() {
   let tl, st, hud, indexHandler, curLang, curMode;
 
   // re-frame when the screen changes shape (rotating a phone rebuilds the scene)
+  // Wide screens: on anything wider than the 16:10 scene, fit the room by height
+  // (never crop the top, where the chips and notes live); otherwise fill and crop the sides.
+  const applyFrame = (L) => {
+    svg.setAttribute('viewBox', L.viewBox);
+    const wideScreen = innerWidth / innerHeight >= 1.6;
+    svg.setAttribute('preserveAspectRatio', curMode === 'wide' && wideScreen ? 'xMidYMax meet' : L.aspect);
+  };
+
   let rT, keep = null;
   addEventListener('resize', () => {
+    if (curMode === 'wide') applyFrame(layouts().wide);
     if (keep === null && st) keep = st.progress; // read before ScrollTrigger re-measures
     clearTimeout(rT);
     rT = setTimeout(() => {
@@ -224,8 +233,7 @@ function createFilm() {
 
     root.classList.remove('is-wide', 'is-short', 'is-portrait');
     root.classList.add(`is-${mode}`);
-    svg.setAttribute('viewBox', L.viewBox);
-    svg.setAttribute('preserveAspectRatio', L.aspect);
+    applyFrame(L);
 
     /* ---- captions ---- */
     const stackCh = chapters.find((c) => c.id === 'stack');
