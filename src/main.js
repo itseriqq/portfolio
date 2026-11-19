@@ -105,9 +105,70 @@ function renderArticle(l) {
 
 /* ------------------------------------------------------------------ *
  * 2. the film
+ *
+ * Three framings of the same room:
+ *  - wide:     desktop / tablet. The whole room, captions on the desk front.
+ *  - short:    phone in landscape. Room shifted right, captions in a left column.
+ *  - portrait: phone upright. Scene on top (wall + laptop), captions below,
+ *              notes in 2 columns, the stack shown as HTML chips in the caption.
  * ------------------------------------------------------------------ */
+function modeFor() {
+  const w = innerWidth, h = innerHeight;
+  if (w / h < 0.8) return 'portrait';
+  if (h <= 520 && w / h >= 1) return 'short';
+  return 'wide';
+}
+
+function layouts() {
+  const LAYOUT = {
+  wide: {
+    viewBox: '0 0 1600 1000',
+    aspect: 'xMidYMax slice',
+    note: { W: 165, H: 120, name: 18, tag: 10, open: 11 },
+    wall: [
+      { x: 470, y: 150, rotation: -5 }, { x: 690, y: 125, rotation: 4 }, { x: 890, y: 170, rotation: -3 },
+      { x: 520, y: 320, rotation: 5 }, { x: 735, y: 300, rotation: -4 }, { x: 905, y: 345, rotation: 3 },
+    ],
+    grid: [{ x: 460, y: 140 }, { x: 675, y: 140 }, { x: 890, y: 140 }, { x: 460, y: 320 }, { x: 675, y: 320 }, { x: 890, y: 320 }],
+    // [from, to, label index or -1, dotted]
+    edges: [[0, 1, 0], [1, 2, 1], [3, 4, 2], [4, 5, 3], [0, 3, -1], [2, 5, -1], [1, 4, -1, true]],
+    system: { x: 460, y: 118 },
+    chips: { X0: 460, X1: 1055, y: 118, font: 12, CH: 26 },
+  },
+  portrait: {
+    viewBox: '540 30 440 690',
+    aspect: 'xMidYMax meet',
+    note: { W: 195, H: 112, name: 24, tag: 14, open: 14 },
+    wall: [
+      { x: 555, y: 80, rotation: -5 }, { x: 770, y: 70, rotation: 4 },
+      { x: 560, y: 225, rotation: 4 }, { x: 765, y: 215, rotation: -3 },
+      { x: 550, y: 370, rotation: -3 }, { x: 775, y: 365, rotation: 5 },
+    ],
+    grid: [{ x: 545, y: 80 }, { x: 775, y: 80 }, { x: 545, y: 230 }, { x: 775, y: 230 }, { x: 545, y: 380 }, { x: 775, y: 380 }],
+    edges: [[0, 1, -1], [2, 3, -1], [4, 5, -1], [0, 2, -1], [3, 5, -1], [2, 4, -1, true]],
+    system: { x: 545, y: 58 },
+    chips: null, // shown as HTML in the caption instead
+  },
+};
+  LAYOUT.short = {
+    viewBox: '-160 0 1360 760',
+    aspect: 'xMidYMid slice',
+    note: { W: 195, H: 112, name: 24, tag: 14, open: 14 },
+    wall: [
+      { x: 460, y: 135, rotation: -5 }, { x: 680, y: 115, rotation: 4 }, { x: 885, y: 150, rotation: -3 },
+      { x: 480, y: 290, rotation: 5 }, { x: 700, y: 280, rotation: -4 }, { x: 895, y: 305, rotation: 3 },
+    ],
+    grid: [{ x: 450, y: 125 }, { x: 670, y: 125 }, { x: 890, y: 125 }, { x: 450, y: 285 }, { x: 670, y: 285 }, { x: 890, y: 285 }],
+    edges: [[0, 1, -1], [1, 2, -1], [3, 4, -1], [4, 5, -1], [0, 3, -1], [2, 5, -1], [1, 4, -1, true]],
+    system: { x: 450, y: 105 },
+    chips: null,
+  };
+  return LAYOUT;
+}
+
 function createFilm() {
   const svg = $('#scene');
+  const root = document.documentElement;
 
   const chipsG = document.createElementNS(NS, 'g');
   chipsG.id = 'chips';
@@ -118,15 +179,6 @@ function createFilm() {
   ['#cone', '#pool', '#screen-glow', '#lid', '#bulb', '#city-lights', '#phone-light', '#wires', '#chips', '#notes', '#wire-labels'].forEach((id) =>
     svg.appendChild($(id))
   );
-
-  // portrait screens: re-frame on the desk and the wall instead of the whole room
-  const frame = () => {
-    const portrait = innerWidth / innerHeight < 0.8;
-    svg.setAttribute('viewBox', portrait ? '470 40 540 960' : '0 0 1600 1000');
-    gsap.set(['#notes', '#wires', '#wire-labels', '#chips'], { scale: portrait ? 0.7 : 1, svgOrigin: '700 260' });
-  };
-  frame();
-  addEventListener('resize', frame);
 
   /* ---- idle motion (always running, tiny) ---- */
   gsap.to('#leaves ellipse', { rotation: 3, svgOrigin: '1410 620', duration: 2.6, ease: 'sine.inOut', yoyo: true, repeat: -1, stagger: 0.3 });
@@ -141,30 +193,47 @@ function createFilm() {
   gsap.ticker.add((t) => lenis.raf(t * 1000));
   gsap.ticker.lagSmoothing(0);
 
-  // sticky note geometry (viewBox units)
-  const W = 165, H = 120;
   const colors = ['#ffd2a8', '#f4e27a', '#b9e3c6', '#f6b5a0', '#bcd0ff', '#e0c9f5'];
+  const chipColors = { front: '#bcd0ff', back: '#b9e3c6', data: '#f4e27a', cloud: '#ffd2a8' };
   const pad = { x: 380, y: 601, scale: 0.55, rotation: 0 }; // lies flat on the notepad
-  const wall = [
-    { x: 470, y: 150, rotation: -5 }, { x: 690, y: 125, rotation: 4 }, { x: 890, y: 170, rotation: -3 },
-    { x: 520, y: 320, rotation: 5 }, { x: 735, y: 300, rotation: -4 }, { x: 905, y: 345, rotation: 3 },
-  ];
-  const grid = [
-    { x: 460, y: 140 }, { x: 675, y: 140 }, { x: 890, y: 140 },
-    { x: 460, y: 320 }, { x: 675, y: 320 }, { x: 890, y: 320 },
-  ].map((g) => ({ ...g, rotation: 0 }));
 
-  let tl, st, hud, indexHandler;
+  let tl, st, hud, indexHandler, curLang, curMode;
 
-  /* Everything with words in it is (re)built per language. Switching languages
-     rewinds the old timeline (so every object returns to its first frame),
-     throws it away, builds a new one and lands on the same scroll position. */
-  function build(l) {
+  // re-frame when the screen changes shape (rotating a phone rebuilds the scene)
+  let rT, keep = null;
+  addEventListener('resize', () => {
+    if (keep === null && st) keep = st.progress; // read before ScrollTrigger re-measures
+    clearTimeout(rT);
+    rT = setTimeout(() => {
+      if (modeFor() !== curMode) build(curLang, keep);
+      keep = null;
+    }, 150);
+  });
+
+  /* Everything with words or layout in it is (re)built per language and per
+     framing. A rebuild rewinds the old timeline (so every object returns to
+     its first frame), throws it away, builds a new one and lands on the same
+     scroll position. */
+  function build(l, keepProgress = null) {
     const { ui, meta, chapters } = content[l];
-    const progress = st ? st.progress : 0;
+    const mode = modeFor();
+    const L = layouts()[mode];
+    const progress = keepProgress ?? (st ? st.progress : 0);
     if (tl) { tl.progress(0); tl.kill(); st.kill(); hud.kill(); }
+    curLang = l; curMode = mode;
+
+    root.classList.remove('is-wide', 'is-short', 'is-portrait');
+    root.classList.add(`is-${mode}`);
+    svg.setAttribute('viewBox', L.viewBox);
+    svg.setAttribute('preserveAspectRatio', L.aspect);
 
     /* ---- captions ---- */
+    const stackCh = chapters.find((c) => c.id === 'stack');
+    const htmlChips = !L.chips
+      ? `<div class="chips">${stack
+          .map((g) => `<div class="chips__g"><b>// ${esc(stackCh.groups[g.id])}</b>${g.items.map((i) => `<span style="background:${chipColors[g.id]}">${esc(i)}</span>`).join('')}</div>`)
+          .join('')}</div>`
+      : '';
     const words = (t) => esc(t).split(' ').map((w) => `<span class="w">${w}</span>`).join(' ');
     $('#caps').innerHTML =
       `<div class="cap cap--intro" data-id="intro">
@@ -176,19 +245,14 @@ function createFilm() {
           (c) => `<div class="cap" data-id="${c.id}">
             <h2>${esc(c.title)}</h2>
             ${(c.cap || c.lines).map((t) => `<p>${words(t)}</p>`).join('')}
+            ${c.id === 'stack' ? htmlChips : ''}
             ${c.links ? `<div class="links">${c.links.map((k) => `<a href="${k.href}" target="_blank" rel="noopener">${esc(k.label)}</a>`).join('')}</div>` : ''}
           </div>`
         )
         .join('');
 
-    /* ---- wire labels ---- */
-    const [w1, w2, w3, w4] = ui.wires;
-    $('#wire-labels').innerHTML = `
-      <text x="650" y="190">${w1}</text><text x="865" y="190">${w2}</text>
-      <text x="650" y="370">${w3}</text><text x="865" y="370">${w4}</text>
-      <text x="460" y="118" text-anchor="start">${esc(ui.system)}</text>`;
-
     /* ---- sticky notes (each one a puppet) ---- */
+    const { W, H } = L.note;
     const notesG = $('#notes');
     notesG.innerHTML = '';
     const notes = projectsFor(l).map((p, i) => {
@@ -199,9 +263,9 @@ function createFilm() {
         <g class="note">
           <rect class="note-paper" width="${W}" height="${H}" rx="3" fill="${colors[i]}" />
           <rect x="${W / 2 - 22}" y="-8" width="44" height="16" fill="#efe7d8" opacity=".55" />
-          <text x="14" y="42" font-size="18" font-weight="500" fill="#17181d">${esc(p.name)}</text>
-          <text x="14" y="66" font-size="10" fill="#17181d" opacity=".72">${esc(p.tag)}</text>
-          <text x="14" y="${H - 14}" font-size="11" fill="#17181d" opacity=".55">${esc(ui.open)}</text>
+          <text x="14" y="${L.note.name + 18}" font-size="${L.note.name}" font-weight="500" fill="#17181d">${esc(p.name)}</text>
+          <text class="note-tag" x="14" y="${L.note.name + L.note.tag + 32}" font-size="${L.note.tag}" fill="#17181d" opacity=".72">${esc(p.tag)}</text>
+          <text x="14" y="${H - 14}" font-size="${L.note.open}" fill="#17181d" opacity=".55">${esc(ui.open)}</text>
         </g>`;
       notesG.appendChild(a);
       $$('text', a).forEach((t) => fit(t, W - 26));
@@ -209,35 +273,57 @@ function createFilm() {
     });
     notes.forEach((n) => gsap.set(n, { ...pad, opacity: 0, transformOrigin: '50% 50%' }));
 
-    /* ---- stack chips, flowed onto the wall group by group ---- */
-    const stackCh = chapters.find((c) => c.id === 'stack');
-    const chipColors = { front: '#bcd0ff', back: '#b9e3c6', data: '#f4e27a', cloud: '#ffd2a8' };
+    /* ---- wires between the notes (drawn in "how I work") ---- */
+    const grid = L.grid.map((g) => ({ ...g, rotation: 0 }));
+    const c = (i) => ({ x: grid[i].x + W / 2, y: grid[i].y + H / 2 });
+    let wiresSvg = '', labelsSvg = '';
+    for (const [a, b, label, dotted] of L.edges) {
+      const A = c(a), B = c(b);
+      let d, lx, ly;
+      if (Math.abs(A.y - B.y) < 1) { // horizontal neighbours
+        d = `M${grid[a].x + W} ${A.y}H${grid[b].x}`;
+        lx = (grid[a].x + W + grid[b].x) / 2; ly = A.y - 10;
+      } else { // vertical neighbours
+        d = `M${A.x} ${grid[a].y + H}V${grid[b].y}`;
+      }
+      wiresSvg += `<path class="wire" d="${d}"${dotted ? ' stroke-dasharray="2 9"' : ''} />`;
+      if (label >= 0) labelsSvg += `<text x="${lx}" y="${ly}">${esc(ui.wires[label])}</text>`;
+    }
+    labelsSvg += `<text x="${L.system.x}" y="${L.system.y}" text-anchor="start">${esc(ui.system)}</text>`;
+    $('#wires').innerHTML = wiresSvg;
+    $('#wire-labels').innerHTML = labelsSvg;
+    $('#wire-labels').setAttribute('font-size', mode === 'wide' ? 10.5 : 15);
+
+    /* ---- stack chips, flowed onto the wall group by group (wide/short only) ---- */
     chipsG.innerHTML = '';
     const chips = [];
-    const X0 = 460, X1 = 1055, CH = 26, GAP = 8;
-    let y = 118;
-    for (const g of stack) {
-      const head = document.createElementNS(NS, 'text');
-      Object.entries({ x: X0, y: y + 12, 'font-size': 11, fill: '#d7ff3a' }).forEach(([k, v]) => head.setAttribute(k, v));
-      head.textContent = `// ${stackCh.groups[g.id]}`;
-      chipsG.appendChild(head);
-      chips.push(head);
-      y += 22;
-      let x = X0;
-      for (const item of g.items) {
-        const c = document.createElementNS(NS, 'g');
-        c.innerHTML = `<rect height="${CH}" rx="${CH / 2}" fill="${chipColors[g.id]}" /><text x="11" y="17" font-size="12" fill="#17181d">${esc(item)}</text>`;
-        chipsG.appendChild(c);
-        const w = c.querySelector('text').getComputedTextLength() + 22;
-        c.querySelector('rect').setAttribute('width', w);
-        if (x + w > X1) { x = X0; y += CH + GAP; }
-        gsap.set(c, { x, y, transformOrigin: '50% 50%' });
-        x += w + GAP;
-        chips.push(c);
+    if (L.chips) {
+      const { X0, X1, font, CH } = L.chips;
+      const GAP = 8;
+      let y = L.chips.y;
+      for (const g of stack) {
+        const head = document.createElementNS(NS, 'text');
+        Object.entries({ x: X0, y: y + 12, 'font-size': 11, fill: '#d7ff3a' }).forEach(([k, v]) => head.setAttribute(k, v));
+        head.textContent = `// ${stackCh.groups[g.id]}`;
+        chipsG.appendChild(head);
+        chips.push(head);
+        y += 22;
+        let x = X0;
+        for (const item of g.items) {
+          const chip = document.createElementNS(NS, 'g');
+          chip.innerHTML = `<rect height="${CH}" rx="${CH / 2}" fill="${chipColors[g.id]}" /><text x="11" y="${CH / 2 + font / 2.6}" font-size="${font}" fill="#17181d">${esc(item)}</text>`;
+          chipsG.appendChild(chip);
+          const w = chip.querySelector('text').getComputedTextLength() + 22;
+          chip.querySelector('rect').setAttribute('width', w);
+          if (x + w > X1) { x = X0; y += CH + GAP; }
+          gsap.set(chip, { x, y, transformOrigin: '50% 50%' });
+          x += w + GAP;
+          chips.push(chip);
+        }
+        y += CH + 16;
       }
-      y += CH + 16;
+      gsap.set(chips, { opacity: 0, scale: 0.4 });
     }
-    gsap.set(chips, { opacity: 0, scale: 0.4 });
 
     /* ---- the scroll timeline ---- */
     const wires = $$('.wire');
@@ -255,6 +341,8 @@ function createFilm() {
       tl.fromTo(el, { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: 0.25, ease: 'power3.out' }, at);
       const w = $$('.w', el);
       if (w.length) tl.fromTo(w, { opacity: 0.15 }, { opacity: 1, stagger: 0.01, duration: 0.1 }, at + 0.05);
+      const ch = $$('.chips span', el);
+      if (ch.length) tl.fromTo(ch, { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, stagger: 0.012, duration: 0.1, ease: 'back.out(2)' }, at + 0.1);
     };
     const hideCap = (id, at) => tl.to(capEl(id), { autoAlpha: 0, y: -16, duration: 0.2, ease: 'power2.in' }, at);
 
@@ -284,20 +372,22 @@ function createFilm() {
 
     // 3 · stack: the tools pop onto the wall, then get packed into the laptop
     marks.stack = 3;
-    tl.to(chips, { opacity: 1, scale: 1, duration: 0.12, stagger: 0.012, ease: 'back.out(2)' }, 3.05);
-    tl.to(chips, { opacity: 0, scale: 0.2, y: 600, duration: 0.2, stagger: { each: 0.006, from: 'end' }, ease: 'power2.in' }, 3.8);
+    if (chips.length) {
+      tl.to(chips, { opacity: 1, scale: 1, duration: 0.12, stagger: 0.012, ease: 'back.out(2)' }, 3.05);
+      tl.to(chips, { opacity: 0, scale: 0.2, y: 600, duration: 0.2, stagger: { each: 0.006, from: 'end' }, ease: 'power2.in' }, 3.8);
+    }
     showCap('stack', 3.05);
     hideCap('stack', 3.8);
 
     // 4 · where I worked: notes peel off the pad and get pinned to the wall
-    marks.built = 4.0;
+    marks.built = 4;
     notes.forEach((n, i) => {
       const t = 4 + i * 0.1;
       tl.set(n, { opacity: 1 }, t).to(
         n,
         { keyframes: [
-          { y: 560, scale: 0.8, rotation: wall[i].rotation * -2, duration: 0.12, ease: 'power2.out' },
-          { ...wall[i], scale: 1, duration: 0.2, ease: 'back.out(1.6)' },
+          { y: 560, scale: 0.8, rotation: L.wall[i].rotation * -2, duration: 0.12, ease: 'power2.out' },
+          { ...L.wall[i], scale: 1, duration: 0.2, ease: 'back.out(1.6)' },
         ] },
         t
       );
@@ -329,14 +419,23 @@ function createFilm() {
     tl.to({}, { duration: 0.5 }, 7); // hold the last frame
 
     st = ScrollTrigger.create({ trigger: '#scroll', start: 'top top', end: 'bottom bottom', animation: tl, scrub: 0.8 });
-    tl.progress(progress); // land on the same frame after a language switch
+    tl.progress(progress); // land on the same frame after a rebuild
+    if (progress > 0) {
+      // a rebuild can reset the page scroll; put the visitor back on the same frame
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh();
+        const y = Math.round(progress * ScrollTrigger.maxScroll(window));
+        scrollTo(0, y);
+        lenis.scrollTo(y, { immediate: true, force: true });
+      });
+    }
 
     /* ---- HUD: line counter + index ---- */
     const totalLines = toMarkdown(l).split('\n').length;
     const ids = Object.keys(marks);
     const index = $('#index');
     index.innerHTML = ids
-      .map((id) => `<button type="button" data-id="${id}"><span>${esc(id === 'intro' ? ui.top : chapters.find((c) => c.id === id).title)}</span></button>`)
+      .map((id) => `<button type="button" data-id="${id}"><span>${esc(id === 'intro' ? ui.top : chapters.find((ch) => ch.id === id).title)}</span></button>`)
       .join('');
     const toScroll = (t) => st.start + (t / tl.duration()) * (st.end - st.start);
     if (indexHandler) index.removeEventListener('click', indexHandler);

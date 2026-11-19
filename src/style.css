@@ -113,11 +113,46 @@ html.lenis, html.lenis body { height: auto; }
 .read blockquote p { margin: 0; }
 .read a { color: var(--acid); }
 
-@media (max-aspect-ratio: 4/5) {
-  .caps { height: 34vh; }
-  .index { display: none; }
-  .hud__btn#download { display: none; }
-  .hint { display: none; }
-  .hud__ln { display: none; }
-  .hud { font-size: 12px; }
+/* ---------- stack chips as HTML (portrait) ---------- */
+.chips { display: flex; flex-direction: column; gap: .45rem; margin-top: .7rem; }
+.chips__g { display: flex; flex-wrap: wrap; gap: .3rem; align-items: center; }
+.chips__g b { width: 100%; font: 500 11px var(--mono); color: var(--acid); }
+.chips__g span { font: 400 11px/1 var(--mono); color: var(--ink); padding: .32rem .55rem; border-radius: 999px; }
+
+/* ---------- phone, upright ---------- */
+.is-portrait #stage { --caps: 40svh; background: #2a2b33; }
+.is-portrait .scene { margin-top: 52px; height: calc(100% - var(--caps) - 52px); }
+.is-portrait .caps { height: var(--caps); background: #17181d; }
+.is-portrait .cap { left: 1.25rem; right: 1.25rem; bottom: max(1.25rem, env(safe-area-inset-bottom)); }
+.is-portrait .cap p { font-size: clamp(15px, 4.4vw, 19px); }
+.is-portrait .cap h2 { font-size: 12px; margin-bottom: .45rem; }
+.is-portrait .cap--intro h1 { font-size: clamp(48px, 15vw, 72px); }
+.is-portrait .cap--intro p { font-size: 12px; line-height: 1.5; }
+.is-portrait .cap .links a { font-size: 13px; padding: .5rem .8rem; }
+.is-portrait .index, .is-portrait .hint, .is-portrait #download, .is-portrait .hud__ln { display: none; }
+.is-portrait .hud { padding: .8rem 1.1rem; font-size: 12px; }
+
+/* ---------- phone, landscape ---------- */
+.is-short .caps {
+  top: 0; bottom: 0; height: auto; width: min(44vw, 420px);
+  background: linear-gradient(90deg, rgba(12, 13, 17, .94) 70%, rgba(12, 13, 17, 0));
+}
+.is-short .cap { left: 1.25rem; right: 2.5rem; bottom: auto; top: 3.4rem; max-width: none; }
+.is-short .cap p { font-size: 15px; }
+.is-short .cap h2 { font-size: 12px; margin-bottom: .4rem; }
+.is-short .cap--intro h1 { font-size: 52px; }
+.is-short .cap--intro p { font-size: 11px; }
+.is-short .cap[data-id="stack"] p { display: none; }
+.is-short .chips { gap: .3rem; margin-top: .45rem; }
+.is-short .chips__g { gap: .22rem; }
+.is-short .chips__g b { font-size: 10px; }
+.is-short .chips__g span { font-size: 10px; padding: .22rem .45rem; }
+.is-short .index, .is-short .hint, .is-short #download, .is-short .hud__ln { display: none; }
+.is-short .hud { padding: .6rem 1rem; }
+
+/* ---------- very small screens ---------- */
+@media (max-width: 380px) {
+  .hud { padding: .8rem 1rem; font-size: 11px; }
+  .hud__file span:not(.hud__dot) { display: none; }
+  .hud__btn { padding: .35rem .6rem; }
 }

@@ -58,9 +58,8 @@
         </defs>
 
         <!-- wall -->
-        <rect width="1600" height="1000" fill="#2a2b33" />
-        <rect y="0" width="1600" height="1000" fill="url(#g-cone)" opacity="0" />
-
+        <rect x="-2000" y="-2000" width="6000" height="5000" fill="#2a2b33" />
+        
         <!-- window -->
         <g id="window">
           <g clip-path="url(#clip-window)">
@@ -82,20 +81,12 @@
         </g>
 
         <!-- architecture connectors (drawn in chapter 4) -->
-        <g id="wires" fill="none" stroke="#d7ff3a" stroke-width="3" stroke-linecap="round">
-          <path class="wire" d="M625 200H675" />
-          <path class="wire" d="M840 200H890" />
-          <path class="wire" d="M542 260V320" />
-          <path class="wire" d="M972 260V320" />
-          <path class="wire" d="M625 380H675" />
-          <path class="wire" d="M840 380H890" />
-          <path class="wire" d="M757 260V320" stroke-dasharray="2 9" />
-        </g>
+        <g id="wires" fill="none" stroke="#d7ff3a" stroke-width="3" stroke-linecap="round"></g>
         <g id="wire-labels" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#d7ff3a" text-anchor="middle" opacity="0"></g>
 
         <!-- desk -->
-        <rect x="0" y="700" width="1600" height="300" fill="#17181d" />
-        <rect x="0" y="690" width="1600" height="14" fill="#3b2f27" />
+        <rect x="-2000" y="700" width="6000" height="2000" fill="#17181d" />
+        <rect x="-2000" y="690" width="6000" height="14" fill="#3b2f27" />
         <rect id="pool" x="40" y="640" width="760" height="120" fill="url(#g-pool)" opacity="0" />
 
         <!-- lamp -->
@@ -163,7 +154,7 @@
         <g id="notes" font-family="JetBrains Mono, monospace"></g>
 
         <!-- darkness -->
-        <rect id="dark" width="1600" height="1000" fill="#06070a" opacity=".86" pointer-events="none" />
+        <rect id="dark" x="-2000" y="-2000" width="6000" height="5000" fill="#06070a" opacity=".86" pointer-events="none" />
       </svg>
 
       <div class="grain"></div>

@@ -60,6 +60,10 @@ export const content = {
           'At Itaú: automation, system integration and data pipelines in a corporate setting. Python, AWS (Glue, Athena, S3, Lambda), Power Automate and Power Apps.',
           'At startups: products from zero, legacy refactors and architecture calls. React, Next.js, React Native, Node.js, Laravel, PostgreSQL, MySQL, MongoDB.',
         ],
+        cap: [
+          'At Itaú: automation, integrations and data pipelines on AWS and the Power Platform.',
+          'At startups: products from zero, legacy refactors and architecture calls.',
+        ],
       },
       {
         id: 'stack',
@@ -93,6 +97,7 @@ export const content = {
           'Data and software to solve real-world problems: mapping the process, finding where it hurts, and applying the right technology.',
           'Sometimes that is a site or an app, sometimes a data analysis, sometimes modernizing the systems that are already there.',
         ],
+        cap: ['Data and software for real-world problems: map the process, find where it hurts, apply the right technology.'],
       },
       {
         id: 'hello',
@@ -138,6 +143,10 @@ export const content = {
           'No Itaú: automação, integração de sistemas e pipelines de dados em ambiente corporativo. Python, AWS (Glue, Athena, S3, Lambda), Power Automate e Power Apps.',
           'Em startups: produtos do zero, refatoração de legado e decisões de arquitetura. React, Next.js, React Native, Node.js, Laravel, PostgreSQL, MySQL, MongoDB.',
         ],
+        cap: [
+          'No Itaú: automação, integrações e pipelines de dados em AWS e Power Platform.',
+          'Em startups: produtos do zero, refatoração de legado e decisões de arquitetura.',
+        ],
       },
       {
         id: 'stack',
@@ -171,6 +180,7 @@ export const content = {
           'Dados e desenvolvimento de software para resolver problemas do mundo real: mapear o processo, encontrar onde dói e aplicar a tecnologia certa.',
           'Às vezes é um site ou um aplicativo, às vezes uma análise de dados, às vezes modernizar os sistemas que já existem.',
         ],
+        cap: ['Dados e software para problemas reais: mapear o processo, achar onde dói e aplicar a tecnologia certa.'],
       },
       {
         id: 'hello',
